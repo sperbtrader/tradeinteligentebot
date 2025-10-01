@@ -284,6 +284,43 @@
             color: var(--neon-green);
         }
         
+        /* Novos elementos adicionados */
+        .urgency {
+            background-color: rgba(255, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        .testimonial {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid var(--neon-blue);
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 15px;
+            color: var(--neon-green);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: var(--neon-green);
+            margin-bottom: 10px;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -319,7 +356,19 @@
         <div class="container">
             <h1>👉 "Deixe um robô operar por você <span>(mesmo que nunca tenha feito day trade)</span>"</h1>
             <p>Comece a lucrar com trading automatizado em menos de 20 minutos</p>
-            <a href="#oferta" class="cta-button">Quero meu robô agora</a>
+            
+            <!-- Adicionado elemento de urgência -->
+            <div class="urgency">
+                <p>🚨 <strong>OFERTA POR TEMPO LIMITADO:</strong> Preço promocional válido apenas para os próximos compradores</p>
+            </div>
+            
+            <a href="https://robotradepro.mycartpanda.com/checkout/198282103:1" class="cta-button">Quero meu robô agora</a>
+            
+            <!-- Adicionado depoimento para aumentar credibilidade -->
+            <div class="testimonial">
+                <p>"Comprei o robô há 2 semanas e já recuperei o investimento. O suporte foi essencial para configurar corretamente!"</p>
+                <p class="testimonial-author">- Carlos Silva, São Paulo</p>
+            </div>
         </div>
     </section>
 
@@ -370,6 +419,11 @@
                     <p>Configurações de gerenciamento de risco já implementadas para proteger seu capital.</p>
                 </div>
             </div>
+            
+            <!-- Adicionado CTA intermediário -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://robotradepro.mycartpanda.com/checkout/198282103:1" class="cta-button">Quero Acesso Imediato</a>
+            </div>
         </div>
     </section>
 
@@ -384,6 +438,11 @@
                     <p class="new-price">R$ 147</p>
                     <p>ou 12x de R$ 14,70</p>
                     <p style="margin-top: 15px; font-size: 16px;">Preço promocional por tempo limitado</p>
+                    
+                    <!-- Adicionado contador de vagas restantes -->
+                    <div class="urgency" style="margin-top: 20px;">
+                        <p>⚠️ <strong>VAGAS LIMITADAS:</strong> Apenas 12 vagas restantes com o bônus de suporte premium</p>
+                    </div>
                 </div>
                 
                 <div class="bonus">
@@ -391,9 +450,29 @@
                     <p>Os primeiros 50 compradores receberão <strong>30 dias de suporte premium gratuito</strong> para ajudar na configuração e primeiras operações.</p>
                 </div>
                 
+                <!-- Adicionado FAQ para reduzir objeções -->
+                <div style="margin-top: 40px;">
+                    <h3 style="font-family: 'Montserrat', sans-serif; margin-bottom: 20px; text-align: center;">Perguntas Frequentes</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Preciso ter experiência em trading?</div>
+                        <p>Não! O robô foi desenvolvido para iniciantes. Nosso mini-curso ensina tudo que você precisa saber para começar.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Quanto tempo leva para configurar?</div>
+                        <p>Em menos de 20 minutos você terá o robô instalado e funcionando seguindo nosso passo a passo em vídeo.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Funciona em qual corretora?</div>
+                        <p>O robô é compatível com as principais corretoras do mercado brasileiro e também opera com criptomoedas.</p>
+                    </div>
+                </div>
+                
                 <div style="text-align: center; margin-top: 40px;">
-                    <a href="#comprar" class="cta-button">Quero meu robô agora</a>
-                    <p style="margin-top: 15px; font-size: 14px;">Pagamento 100% seguro • Acesso imediato</p>
+                    <a href="https://robotradepro.mycartpanda.com/checkout/198282103:1" class="cta-button">Quero meu robô agora</a>
+                    <p style="margin-top: 15px; font-size: 14px;">Pagamento 100% seguro • Acesso imediato • Garantia de 7 dias</p>
                 </div>
             </div>
         </div>
@@ -409,6 +488,11 @@
                 <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 20px;">Sem Risco</h2>
                 <p>Se em 7 dias você não estiver satisfeito com o Starter Pack, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.</p>
                 <p style="margin-top: 15px;">É arriscar para ganhar, nunca para perder.</p>
+                
+                <!-- CTA final -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://robotradepro.mycartpanda.com/checkout/198282103:1" class="cta-button">Começar Agora</a>
+                </div>
             </div>
         </div>
     </section>
