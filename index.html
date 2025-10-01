@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starter Pack - Robô de Day Trade Automático | TradeInteligenteBot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1E1E1E;
+            --neon-green: #39FF14;
+            --neon-blue: #1F51FF;
+            --text-light: #F5F5F5;
+            --text-gray: #B0B0B0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--neon-green), var(--neon-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-top: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(31, 81, 255, 0.1) 0%, transparent 70%);
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--neon-green);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--text-gray);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--neon-green), var(--neon-blue));
+            color: var(--bg-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(57, 255, 20, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(57, 255, 20, 0.4);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--neon-green), var(--neon-blue));
+        }
+        
+        .problem-content, .solution-content, .offer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .problem-content p, .offer-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+        
+        .highlight {
+            color: var(--neon-green);
+            font-weight: 500;
+        }
+        
+        /* Solution Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--neon-green);
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--neon-green);
+        }
+        
+        .benefit-card p {
+            color: var(--text-gray);
+        }
+        
+        /* Offer Section */
+        .price-box {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(31, 81, 255, 0.1));
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 1px solid rgba(57, 255, 20, 0.2);
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--text-gray);
+            font-size: 24px;
+        }
+        
+        .new-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            color: var(--neon-green);
+            margin: 10px 0;
+        }
+        
+        .bonus {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(31, 81, 255, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--neon-blue);
+        }
+        
+        .bonus h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--neon-blue);
+            margin-bottom: 10px;
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            text-align: center;
+            padding: 60px 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .guarantee-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(57, 255, 20, 0.1);
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .social-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--neon-green);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .new-price {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🤖</div>
+                <div class="logo-text">TradeInteligenteBot</div>
+            </div>
+            <p class="tagline">🚀 Lucro no automático | 🤖 Criptos & Day Trade com robôs</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>👉 "Deixe um robô operar por você <span>(mesmo que nunca tenha feito day trade)</span>"</h1>
+            <p>Comece a lucrar com trading automatizado em menos de 20 minutos</p>
+            <a href="#oferta" class="cta-button">Quero meu robô agora</a>
+        </div>
+    </section>
+
+    <section id="problema" class="problem">
+        <div class="container">
+            <h2 class="section-title">O Problema</h2>
+            <div class="problem-content">
+                <p>"Você trabalha, estuda, cuida da vida… mas o mercado financeiro não para. Enquanto isso, traders profissionais e robôs lucram 24h. E você?"</p>
+                <p>Enquanto você está ocupado com suas responsabilidades diárias, oportunidades de lucro no mercado financeiro passam despercebidas. O trading manual exige tempo, atenção constante e conhecimento técnico que levam anos para desenvolver.</p>
+                <p class="highlight">Resultado: você fica para trás enquanto outros lucram no automático.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucao" class="solution">
+        <div class="container">
+            <h2 class="section-title">A Solução</h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">"Com o Starter Pack Robô Automático, você terá tudo que precisa para começar a operar no automático hoje mesmo:"</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>🤖 Robô Pré-configurado</h3>
+                    <p>Nosso robô de day trade já vem configurado com estratégias testadas. Basta instalar e começar a operar.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🎓 Mini Curso em Vídeo</h3>
+                    <p>Aprenda a instalar e usar o robô em apenas 1 hora de conteúdo prático e direto ao ponto.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>📊 Planilha de Simulação</h3>
+                    <p>Calcule seus ganhos potenciais antes mesmo de começar a operar com nossa planilha exclusiva.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>✅ Checklist Antifalhas</h3>
+                    <p>Evite os 10 erros mais comuns de traders iniciantes com nosso checklist de segurança.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>👥 Comunidade de Suporte</h3>
+                    <p>Acesso a grupo fechado no Telegram para tirar dúvidas e trocar experiências.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🛡️ Operação Segura</h3>
+                    <p>Configurações de gerenciamento de risco já implementadas para proteger seu capital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" class="offer">
+        <div class="container">
+            <h2 class="section-title">Oferta Exclusiva</h2>
+            <div class="offer-content">
+                <p>Imagine ter um assistente de trading trabalhando para você 24 horas por dia, mesmo enquanto você dorme, trabalha ou se diverte.</p>
+                
+                <div class="price-box">
+                    <p class="old-price">De R$ 497</p>
+                    <p class="new-price">R$ 147</p>
+                    <p>ou 12x de R$ 14,70</p>
+                    <p style="margin-top: 15px; font-size: 16px;">Preço promocional por tempo limitado</p>
+                </div>
+                
+                <div class="bonus">
+                    <h3>🎁 Bônus Exclusivo</h3>
+                    <p>Os primeiros 50 compradores receberão <strong>30 dias de suporte premium gratuito</strong> para ajudar na configuração e primeiras operações.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#comprar" class="cta-button">Quero meu robô agora</a>
+                    <p style="margin-top: 15px; font-size: 14px;">Pagamento 100% seguro • Acesso imediato</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <div class="guarantee-badge">
+                    <span>✅</span>
+                    <span>Garantia de 7 dias</span>
+                </div>
+                <h2 style="font-family: 'Montserrat', sans-serif; margin-bottom: 20px;">Sem Risco</h2>
+                <p>Se em 7 dias você não estiver satisfeito com o Starter Pack, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.</p>
+                <p style="margin-top: 15px;">É arriscar para ganhar, nunca para perder.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.instagram.com/tradeinteligentebot/" class="social-link" target="_blank">Instagram</a>
+                <a href="#" class="social-link">Termos de Uso</a>
+                <a href="#" class="social-link">Política de Privacidade</a>
+            </div>
+            <p>TradeInteligenteBot © 2023 - Todos os direitos reservados</p>
+            <p style="margin-top: 10px; font-size: 12px;">Este produto não garante lucros e envolve riscos. Operações no mercado financeiro podem resultar em perdas.</p>
+        </div>
+    </footer>
+</body>
+</html>
